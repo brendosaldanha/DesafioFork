@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.labelMensagem.text = self.retornaSaudacao()
         
     }
     
@@ -51,13 +50,21 @@ class ViewController: UIViewController {
     
     @IBAction func tocar(_ sender: UITapGestureRecognizer) {
         
-        let alerta = UIAlertController(title: "", message: retornaSaudacao(), preferredStyle: .alert)
+        //let alerta = UIAlertController(title: "", message: retornaSaudacao(), preferredStyle: .alert)
+        
+        let alerta = UIAlertController(title: self.retornaSaudacao(), message: nil, preferredStyle: .alert)
         
         let acaoOK = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alerta.addAction(acaoOK)
         
-        present(alerta, animated: true, completion: nil)
+        self.present(alerta, animated: true, completion: nil)
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .lightContent
         
     }
     
